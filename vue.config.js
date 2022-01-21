@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 
 // 是否为生产环境
-const isProduction = process.env.NODE_ENV !== 'development'
+const isProduction = process.env.NODE_ENV === 'production'
 
 // 代码压缩
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -159,15 +159,15 @@ module.exports = defineConfig({
     compress: true, //是否启用gzip压缩
     port: 8080,
     proxy: {
-      // '/proxy': { // 通用代理
-      //   // target: 'https://healthapi.aiyidong.cn/', // 测试环境
-      //   target: 'https://nhapi.xmzjsg.com /', // 正式环境
-      //   ws: true,
-      //   changOrigin: true,
-      //   pathRewrite: {
-      //     '^/proxy': '/'
-      //   }
-      // }
+      '/proxy': { // 通用代理
+        // target: 'https://healthapi.aiyidong.cn/', // 测试环境
+        target: 'https://nhapi.xmzjsg.com /', // 正式环境
+        ws: true,
+        changOrigin: true,
+        pathRewrite: {
+          '^/proxy': '/'
+        }
+      }
     }
   }
 })
