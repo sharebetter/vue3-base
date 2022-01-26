@@ -2,7 +2,7 @@
  * @Author: 曾海明
  * @Date: 2022-01-19 22:07:55
  * @LastEditors: 曾海明
- * @LastEditTime: 2022-01-19 22:18:30
+ * @LastEditTime: 2022-01-21 16:57:17
  * @Description:
  */
 import { Tab, Tabs } from 'vant'
